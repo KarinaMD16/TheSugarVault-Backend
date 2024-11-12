@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { LandingController } from './landing/landing.controller';
 import { LandingModule } from './landing/landing.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Encabezado } from './landing/Entities/encabezadoEntity';
@@ -15,7 +14,7 @@ import { Review } from './landing/Entities/reviewEntity';
       host: "localhost",
       port: 3306,
       username: "root",
-      password: "saludos2018*",
+      password: "12345",
       database: "landing_db",
       entities: [Review, Encabezado],
       autoLoadEntities: true,
@@ -25,4 +24,5 @@ import { Review } from './landing/Entities/reviewEntity';
   controllers: [AppController],
   providers: [AppService],
 })
+
 export class AppModule {}
