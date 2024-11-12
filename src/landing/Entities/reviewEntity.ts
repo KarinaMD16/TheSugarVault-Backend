@@ -29,4 +29,3 @@ import {
     deletedAt: Date;
 
   }
-  

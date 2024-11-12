@@ -58,8 +58,4 @@ export class LandingController {
         return this.landingService.removeEncabezado(id);
     }
 
-
-
-
-
 }

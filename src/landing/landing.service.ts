@@ -8,8 +8,6 @@ import { EncabezadoDto } from './EncabezadoDto/EncabezadoDto';
 
 @Injectable()
 export class LandingService {
-
-
     constructor(
         @InjectRepository(Review)
         private reviewRepository: Repository<Review>,
@@ -17,7 +15,7 @@ export class LandingService {
         private encabezadoRepository: Repository<Encabezado>
     ){}
 
-    //Entidades para la review
+    // review
     async createReview(createReview: ReviewDto) {
         const review = this.reviewRepository.create(createReview);
         return await this.reviewRepository.save(review);
@@ -39,7 +37,7 @@ export class LandingService {
         return await this.reviewRepository.softDelete(id);
     }
 
-    //Entidades para la review
+    // encabezado
     async createEncabezado(createEncabezado: EncabezadoDto) {
         const encabezado = this.encabezadoRepository.create(createEncabezado);
         return await this.encabezadoRepository.save(encabezado);
