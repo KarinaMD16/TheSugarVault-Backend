@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { LandingController } from './landing/landing.controller';
 import { LandingModule } from './landing/landing.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Encabezado } from './landing/Entities/encabezadoEntity';
 import { Review } from './landing/Entities/reviewEntity';
+import { Servicio } from './landing/Entities/servicioEntity';
 
 @Module({
   imports: [
@@ -17,7 +17,7 @@ import { Review } from './landing/Entities/reviewEntity';
       username: "root",
       password: "saludos2018*",
       database: "landing_db",
-      entities: [Review, Encabezado],
+      entities: [Review, Encabezado, Servicio],
       autoLoadEntities: true,
       synchronize: true,
     }),
@@ -25,4 +25,5 @@ import { Review } from './landing/Entities/reviewEntity';
   controllers: [AppController],
   providers: [AppService],
 })
+
 export class AppModule {}

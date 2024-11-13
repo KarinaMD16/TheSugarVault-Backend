@@ -6,26 +6,20 @@ import {
   } from "typeorm";
   
   @Entity()
-  export class Review {
+  export class Servicio {
     @PrimaryGeneratedColumn()
     id: number;
   
     @Column()
-    reviewerName: string
+    servicesName: string;
   
     @Column()
-    reviewerPicture: string;
-  
-    @Column()
-    reviewTitle: string;
-  
-    @Column()
-    reviewDescription: string;
+    servicesPicture: string;
 
     @Column()
-    reviewDate: string;
-
+    servicesDescription: string;
+  
     @DeleteDateColumn()
     deletedAt: Date;
-
+    
   }

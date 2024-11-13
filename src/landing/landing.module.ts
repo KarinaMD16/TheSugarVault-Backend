@@ -4,9 +4,10 @@ import { LandingService } from './landing.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Encabezado } from './Entities/encabezadoEntity';
 import { Review } from './Entities/reviewEntity';
+import { Servicio } from './Entities/servicioEntity';
 
 @Module({
-    imports: [TypeOrmModule.forFeature([Review, Encabezado])],
+    imports: [TypeOrmModule.forFeature([Review, Encabezado, Servicio])],
     controllers: [LandingController],
     providers: [LandingService],
 })

@@ -13,7 +13,6 @@ import {
     @Column()
     titulo: string;
   
-  
     @Column()
     imagen: string;
   
