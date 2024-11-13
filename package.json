@@ -27,6 +27,7 @@
     "mysql2": "^3.11.4",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",
+    "TheSugarVault-Backend": "file:",
     "typeorm": "^0.3.20"
   },
   "devDependencies": {

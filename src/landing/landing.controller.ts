@@ -2,22 +2,11 @@ import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 import { LandingService } from './landing.service';
 import { ReviewDto } from './ReviewDto/ReviewDto';
 import { EncabezadoDto } from './EncabezadoDto/EncabezadoDto';
-import { ServicioDto } from './ServiciosDto/ServiciosDto';
 
 @Controller('landing_db')
 export class LandingController {
 
     constructor(private landingService: LandingService) {}
-
-    @Post('review')
-    createReview(@Body() createReview: ReviewDto){
-        return this.landingService.createReview(createReview);
-    }
-
-    @Post('encabezado')
-    createEncabezado(@Body() createEncabezado: EncabezadoDto){
-        return this.landingService.createEncabezado(createEncabezado);
-    }
 
     // reviews 
     @Get('review')
@@ -40,6 +29,12 @@ export class LandingController {
         return this.landingService.removeReview(id);
     }
 
+    @Post('review')
+    createReview(@Body() createReview: ReviewDto){
+        return this.landingService.createReview(createReview);
+    }
+
+    
     // encabezdo
 
     @Get('encabezado')
@@ -62,4 +57,14 @@ export class LandingController {
         return this.landingService.removeEncabezado(id);
     }
 
+    @Post('encabezado')
+    createEncabezado(@Body() createEncabezado: EncabezadoDto){
+        return this.landingService.createEncabezado(createEncabezado);
+    }
+
+    // service
+    @Get('servicios')
+    findAllServicios(){
+        return this.landingService.findAllServicios()
+    }
 }
