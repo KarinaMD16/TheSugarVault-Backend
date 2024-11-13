@@ -5,6 +5,8 @@ import { Repository } from 'typeorm';
 import { Encabezado } from './Entities/encabezadoEntity';
 import { ReviewDto } from './ReviewDto/ReviewDto';
 import { EncabezadoDto } from './EncabezadoDto/EncabezadoDto';
+import { Servicio } from './Entities/servicioEntity';
+import { ServicioDto } from './ServiciosDto/ServiciosDto';
 
 @Injectable()
 export class LandingService {
@@ -12,7 +14,9 @@ export class LandingService {
         @InjectRepository(Review)
         private reviewRepository: Repository<Review>,
         @InjectRepository(Encabezado)
-        private encabezadoRepository: Repository<Encabezado>
+        private encabezadoRepository: Repository<Encabezado>,
+        @InjectRepository(Servicio)
+        private servicioRepository: Repository<Servicio>
     ){}
 
     // review
@@ -59,4 +63,25 @@ export class LandingService {
         return await this.encabezadoRepository.softDelete(id);
     }
 
+    //Entidades para la servicio
+    async createServicio(createServicio: ServicioDto) {
+        const servicio = this.servicioRepository.create(createServicio);
+        return await this.servicioRepository.save(servicio);
+    }
+    
+    async findAllServicios() {
+        return await this.servicioRepository.find();
+    }
+    
+    async findOneServicio(id: number) {
+        return await this.servicioRepository.findOneBy({ id });
+    }
+    
+    async updateServicio(id: number, updatedServicio: ServicioDto) {
+        return await this.servicioRepository.update(id, updatedServicio);
+    }
+    
+    async removeServicio(id: number) {
+        return await this.servicioRepository.softDelete(id);
+    }
 }

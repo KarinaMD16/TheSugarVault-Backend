@@ -2,6 +2,7 @@ import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 import { LandingService } from './landing.service';
 import { ReviewDto } from './ReviewDto/ReviewDto';
 import { EncabezadoDto } from './EncabezadoDto/EncabezadoDto';
+import { ServicioDto } from './ServiciosDto/ServiciosDto';
 
 @Controller('landing_db')
 export class LandingController {

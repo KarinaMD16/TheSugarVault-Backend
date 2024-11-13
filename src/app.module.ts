@@ -5,6 +5,7 @@ import { LandingModule } from './landing/landing.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Encabezado } from './landing/Entities/encabezadoEntity';
 import { Review } from './landing/Entities/reviewEntity';
+import { Servicio } from './landing/Entities/servicioEntity';
 
 @Module({
   imports: [
@@ -14,9 +15,9 @@ import { Review } from './landing/Entities/reviewEntity';
       host: "localhost",
       port: 3306,
       username: "root",
-      password: "12345",
+      password: "saludos2018*",
       database: "landing_db",
-      entities: [Review, Encabezado],
+      entities: [Review, Encabezado, Servicio],
       autoLoadEntities: true,
       synchronize: true,
     }),
