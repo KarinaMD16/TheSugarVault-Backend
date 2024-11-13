@@ -15,7 +15,7 @@ import { Servicio } from './landing/Entities/servicioEntity';
       host: "localhost",
       port: 3306,
       username: "root",
-      password: "saludos2018*",
+      password: "",
       database: "landing_db",
       entities: [Review, Encabezado, Servicio],
       autoLoadEntities: true,
